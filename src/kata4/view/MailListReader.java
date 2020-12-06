@@ -18,11 +18,16 @@ public class MailListReader {
         List<Mail> list = new ArrayList<>();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(new File(fileName)));
+            
+            String line = reader.readLine();
+            
             while(true) {
-                String line = reader.readLine();
+                
                 if(line == null) break;
-                if(Mail.isMail(line))
+                if(Mail.isMail(line)) {
                     list.add(new Mail(line));
+                }
+                    line = reader.readLine();
             }
             
         } catch (FileNotFoundException exception) {
