@@ -10,7 +10,7 @@ import java.util.List;
 public class Kata4 {
 
     public static void main(String[] args) {
-        String fileName = new String("emails.txt");
+        String fileName = "emails.txt";
         List<Mail> mailList = MailListReader.read(fileName);
         
         Histogram<String> histogram = MailHistogramBuilder.build(mailList);
